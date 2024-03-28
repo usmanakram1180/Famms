@@ -1,0 +1,47 @@
+ <div class="hero_area">
+         <!-- header section strats -->
+         <%= render 'shared/header' %>
+         <!-- end header section -->
+      </div>
+      <!-- inner page section -->
+      <section class="inner_page_head">
+         <div class="container_fuild">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <h3>Contact us</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end inner page section -->
+      <!-- why section -->
+       <section class="why_section layout_padding">
+         <div class="container">
+         
+            <div class="row">
+               <div class="col-lg-8 offset-lg-2">
+                  <div class="full">
+                     <%= form_with(url: contacts_path, method: "post") do |form| %>
+                        <fieldset>
+                           <%= form.text_field :full_name, placeholder: "Enter your full name", required: true %>
+                           <%= form.email_field :email_address, placeholder: "Enter your email address", required: true %>
+                           <%= form.text_field :subject, placeholder: "Enter subject", required: true %>
+                           <%= form.text_area :message, placeholder: "Enter your message", required: true %>
+                           <%= form.submit "Submit" %>
+                        </fieldset>
+                     <% end %>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end why section -->
+      <!-- arrival section -->
+      <%= render 'shared/arrival' %>
+      <!-- end arrival section -->
+      <!-- footer section -->
+     <%= render 'shared/footer' %>
+      <!-- footer section -->
